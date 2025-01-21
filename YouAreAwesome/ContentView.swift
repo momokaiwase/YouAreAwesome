@@ -42,5 +42,4 @@ struct ContentView: View {
     ContentView()
 }
 
-
 //cmd A selects everything, ctrl I to fix indentation
