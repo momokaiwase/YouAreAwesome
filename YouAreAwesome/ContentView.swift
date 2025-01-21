@@ -8,26 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var message = "I Am A Programmer!"
+    @State private var message = ""
+    @State private var imageName = ""
     var body: some View {
         VStack {
             Spacer()
-            Image(systemName: "swift")
+            Image(systemName: imageName)
                 .resizable()
                 .scaledToFit()
                 .foregroundStyle(.orange)
-                .frame(width: 200, height: 200) //200 x 200 box constraining the swift
             Text(message)
                 .font(.largeTitle)
                 .fontWeight(.ultraLight)
             
             Spacer()
-            HStack {
-                Button("Awesome!") {
-                    message = "Awesome!"
-                }
-                Button("Great!") {
-                    message = "Great!"
+            Button("Press Me!") {
+                let message1 = "You are Awesome!"
+                let message2 = "You are Great!"
+                if message == message1 {
+                    message = message2
+                    imageName = "hand.thumbsup"
+                } else {
+                    message = message1
+                    imageName = "sun.max.fill"
                 }
             }
             .buttonStyle(.borderedProminent)
@@ -42,3 +45,6 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
+
+//cmd A selects everything, ctrl I to fix indentation
